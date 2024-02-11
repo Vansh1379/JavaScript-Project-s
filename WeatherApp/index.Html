@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherApp</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+        <div class="search">
+            <input type="text" placeholder="Enter Your location" spellcheck="false">
+            <button><img src="images/search.png" alt=""></button>
+        </div>
+        <div class="wheather">
+            <img src="images/rain.png" class="wheather-icon">
+            <h1 class="temp">23°C</h1>
+            <h2 class="city">Karnal</h2>
+            <div class="details">
+                <div class="col">
+                    <img src="images/humidity.png" alt="">
+                    <div>
+                        <p class="humidity">50%</p>
+                        <p>Humidity</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="images/wind.png" alt="">
+                    <div>
+                        <p class="wind">15km</p>
+                        <p>Wind Speed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        
+    const apikey = "c8e6c18f5cc36f5bafbd642a4123728b";
+    const apiurl = "https://api.openweathermap.org/geo/1.0/direct?q=karnal&units=metric&limit=1";
+
+    async function checkWheather(){
+        const response = await fetch(apiurl+`&appid=${apikey}`);
+        var data = await response.json();
+
+        console.log(data);
+        const lat = data[0].lat;
+        const  lon = data[0].lon;
+       const response2 = await fetch(apiurl+`&appid=${apikey}`+`&lat=${lat}`+`&lon=${lon}`);
+       var data2 = await response2.json();
+       console.log(data2);
+    }
+    checkWheather();
+    </script>
+</body>
+</html>
