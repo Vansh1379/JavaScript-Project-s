@@ -6,6 +6,9 @@
         const response = await fetch(apiurl+`&appid=${apiKey}`+`&limit=5`);
         var data = await response.json();
 
+        if(!data[0]){
         console.log(data);
+        }
     }
+
     checkWheather();
