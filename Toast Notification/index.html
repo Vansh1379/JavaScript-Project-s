@@ -5,16 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Toast Notification</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a8f789b98d.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="buttons">
-       <button onclick="showToast()">Success</button>
-       <button onclick="showToast()">Error</button>
-       <button onclick="showToast()">Warning</button>
+       <button onclick="showToast(SuccessMsg)">Success</button>
+       <button onclick="showToast(ErrorMsg)">Error</button>
+       <button onclick="showToast(WarningMsg)">Warning</button>
     </div>
-    <div id="toastBox">
-
-    </div>
+    <div id="toastBox"></div>
     <script src="script.js"></script>
 </body>
 </html>
