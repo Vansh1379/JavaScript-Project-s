@@ -5,6 +5,7 @@ const port = 3000;
 app.get('/',(req,res)=>{
     res.send('<b>Hi cutiee!</b>');
 })
+
 // app.post("/backend", (req,res)=>{ 
 //     res.send('<b>Hi There!</b>');
 // })
